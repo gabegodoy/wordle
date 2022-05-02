@@ -1,8 +1,29 @@
 var key = document.querySelectorAll('.keyboard-key');
 var allGuesses = document.querySelectorAll('.guesses li');
+var portuguese = document.querySelector('.portuguese');
+var english = document.querySelector('.english');
+
 
 var counter = 0
-var words = ['IDEIA', 'SUTIL', 'VIGOR', 'PODER', 'AMIGO', 'MAMAE']
+var portugueseWords = ['IDEIA', 'SUTIL', 'VIGOR', 'PODER', 'AMIGO', 'MAMAE', 'SAGAZ', 'NOBRE', 'AFETO', 'FAZER', 'CARNE', 'PODER', 'MORAL', 'MUITO', 'HONRA', 'JUSTO', 'ETNIA', 'SONHO', 'ICONE', 'RAZAO', 'SONHO', 'CASAL', 'TEMPO', 'DENGO', 'GENRO', 'CULTO', 'TEMOR', 'VICIO', 'FORTE', 'REGRA', 'LOUCO', 'SAUDE', 'BANAL', 'FELIZ', 'ONTEM', 'HOMEM', 'MEIGA', 'HEROI', 'ABRIR', 'FALSO', 'BRAVO', 'GENIO']
+var englishWords = []
+var words;
+var wordTest;
+
+portuguese.addEventListener("click", function(){
+    words = portugueseWords
+    document.querySelector('.popup').style.display = 'none'
+    wordTest = wordDrawn()
+
+})
+english.addEventListener("click", function(){
+    words = englishWords
+    document.querySelector('.popup').style.display = 'none'
+    wordTest = wordDrawn()
+
+})
+
+
 
 function wordDrawn (){
     return words[Math.floor(Math.random() * words.length)]
@@ -37,7 +58,6 @@ for (var i=0; i< key.length; i++){
 
 }
 
-var wordTest = wordDrawn()
 var firtsGuess = document.querySelectorAll('.firtsGuess li')
 var secondGuess = document.querySelectorAll('.secondGuess li')
 var thirdGuess = document.querySelectorAll('.thirdGuess li')
@@ -46,13 +66,8 @@ var fifthGuess = document.querySelectorAll('.fifthGuess li')
 
 var line = firtsGuess
 
-
-var wrongPlace;
-
-
-
-
 function tryGuess (){
+
     for (var i = 0; i < wordTest.length; i++){
         for (var i = 0; i < line.length; i++)
 
@@ -69,7 +84,8 @@ function tryGuess (){
                
             }
     }
+    console.log (wordTest)
+
 }
 
-console.log (wordTest)
 
