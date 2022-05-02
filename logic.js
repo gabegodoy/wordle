@@ -6,7 +6,7 @@ var english = document.querySelector('.english');
 
 var counter = 0
 var portugueseWords = ['IDEIA', 'SUTIL', 'VIGOR', 'PODER', 'AMIGO', 'MAMAE', 'SAGAZ', 'NOBRE', 'AFETO', 'FAZER', 'CARNE', 'PODER', 'MORAL', 'MUITO', 'HONRA', 'JUSTO', 'ETNIA', 'SONHO', 'ICONE', 'RAZAO', 'SONHO', 'CASAL', 'TEMPO', 'DENGO', 'GENRO', 'CULTO', 'TEMOR', 'VICIO', 'FORTE', 'REGRA', 'LOUCO', 'SAUDE', 'BANAL', 'FELIZ', 'ONTEM', 'HOMEM', 'MEIGA', 'HEROI', 'ABRIR', 'FALSO', 'BRAVO', 'GENIO']
-var englishWords = []
+var englishWords = ['ABOUT', 'ALERT', 'ACTOR', 'APPLE', 'AWARE', 'ADULT', 'ALARM', 'ALIVE', 'AGREE', 'AUDIO', 'BEACH', 'BRAIN', 'BREAK', 'BROWN', 'BLOOD', 'BEGIN', 'BROKE', 'CLEAR', 'CHINA', 'CLOUD', 'CHEAP', 'CLASS', 'CRASH', 'DRIVE', 'EVERY', 'INPUT', 'JOINT', 'PHOTO', 'PLANT', 'RURAL', 'SHARP', 'SHELF', 'SHIRT', 'TEETH', 'TEACH', 'SUGAR', 'TRUCK', 'TRUST', 'UNDER', 'YOUNG', 'WATER', 'VIRUS', 'WATCH']
 var words;
 var wordTest;
 
@@ -81,8 +81,7 @@ function tryGuess (){
 
             else if (line[i].textContent != wordTest[i]){
                 line[i].style.backgroundColor = 'var(--red)'
-               
-            }
+              }
     }
     console.log (wordTest)
 
