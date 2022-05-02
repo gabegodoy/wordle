@@ -31,8 +31,20 @@ function wordDrawn (){
 
 for (var i=0; i< key.length; i++){
     key[i].addEventListener("click", function(event){
-        allGuesses[counter].innerHTML = event.target.textContent;
-        counter ++
+        
+        if (event.target.textContent == '←' && (counter % 5 != 0) ){
+            counter --
+            allGuesses[counter].innerHTML = ''
+        }
+        else if (event.target.textContent == '←' && (counter % 5 == 0)){
+            allGuesses[counter].innerHTML = ''
+        }
+        else{
+            allGuesses[counter].innerHTML = event.target.textContent;
+            counter ++
+            console.log(event.target.textContent)
+        }
+
         switch (counter) {
             case 5:
                 tryGuess()
