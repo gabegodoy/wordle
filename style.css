@@ -46,7 +46,6 @@ html{
 }
 
 
-
 header h1{
     text-align: center;
     margin-top: 50px;
@@ -80,6 +79,17 @@ header h1{
     text-align: center;
     background-color: var(--blueGray);
     margin-left: 2px;
+
+}
+
+.result{
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+    margin: 0;
+    margin-bottom: -40px;
+    color: var(--green);
+    display: none;
 
 }
 

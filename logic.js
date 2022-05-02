@@ -2,6 +2,7 @@ var key = document.querySelectorAll('.keyboard-key');
 var allGuesses = document.querySelectorAll('.guesses li');
 var portuguese = document.querySelector('.portuguese');
 var english = document.querySelector('.english');
+var result = document.querySelector('.result');
 
 
 var counter = 0
@@ -64,6 +65,8 @@ for (var i=0; i< key.length; i++){
             case 25:         
                 line = fifthGuess
                 tryGuess()
+                result.innerHTML = wordTest
+                result.style.display = 'block'
                 break;      
         } 
     })
