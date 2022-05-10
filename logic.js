@@ -11,6 +11,9 @@ var englishWords = ['ABOUT', 'ALERT', 'ACTOR', 'APPLE', 'AWARE', 'ADULT', 'ALARM
 var words;
 var wordTest;
 
+var pushedLetter = ''; 
+var redLetter = '';
+
 portuguese.addEventListener("click", function(){
     words = portugueseWords
     document.querySelector('.popup').style.display = 'none'
@@ -46,6 +49,8 @@ for (var i=0; i< key.length; i++){
             console.log(event.target.textContent)
         }
 
+        pushedLetter = event.target.textContent
+
         switch (counter) {
             case 5:
                 tryGuess()
@@ -70,6 +75,7 @@ for (var i=0; i< key.length; i++){
                 break;      
         } 
     })
+
 
 }
 
@@ -96,10 +102,28 @@ function tryGuess (){
 
             else if (line[i].textContent != wordTest[i]){
                 line[i].style.backgroundColor = 'var(--red)'
+                redLetter += line[i].textContent
               }
+
     }
     console.log (wordTest)
-
+    console.log (redLetter)
+    makeKeyboardRed()
 }
 
 
+function makeKeyboardRed () {
+    for (var i=0; i< key.length; i++){
+        for (var r=0; r<redLetter.length; r++){
+            if (key[i].textContent == redLetter[r]){
+                key[i].style.opacity = 0.3;
+                key[i].style.backgroundColor = 'var(--red)';
+            }
+        }
+
+
+    }
+    console.log('almost')
+
+
+}
