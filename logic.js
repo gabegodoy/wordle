@@ -13,6 +13,8 @@ var wordTest;
 
 var pushedLetter = ''; 
 var redLetter = '';
+var yellowLetter = '';
+var greenLetter = '';
 
 portuguese.addEventListener("click", function(){
     words = portugueseWords
@@ -94,10 +96,12 @@ function tryGuess (){
 
             if (line[i].textContent == wordTest[i]){
                 line[i].style.backgroundColor = 'var(--green)'
+                greenLetter += line[i].textContent
             }        
 
              else if (wordTest.includes(line[i].textContent)){
                 line[i].style.backgroundColor = 'var(--yellow)'
+                yellowLetter += line[i].textContent
             } 
 
             else if (line[i].textContent != wordTest[i]){
@@ -108,22 +112,32 @@ function tryGuess (){
     }
     console.log (wordTest)
     console.log (redLetter)
-    makeKeyboardRed()
+    colourKeyboard()
 }
 
 
-function makeKeyboardRed () {
+function colourKeyboard () {
     for (var i=0; i< key.length; i++){
         for (var r=0; r<redLetter.length; r++){
             if (key[i].textContent == redLetter[r]){
-                key[i].style.opacity = 0.3;
+                
                 key[i].style.backgroundColor = 'var(--red)';
             }
         }
 
+        for (var y=0; y<yellowLetter.length; y++){
+            if (key[i].textContent == yellowLetter[y]){
+                key[i].style.backgroundColor = 'var(--yellow)';
+            }
+        }
+
+        for (var g=0; g<greenLetter.length; g++){
+            if (key[i].textContent == greenLetter[g]){
+                key[i].style.backgroundColor = 'var(--green)';
+            }
+        }
 
     }
-    console.log('almost')
 
 
 }
